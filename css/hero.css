@@ -1,0 +1,25 @@
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 180px;
+  min-height: 300px;
+}
+
+.hero-texto h1 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.15;
+}
+
+.hero-texto p {
+  margin-top: 0.75rem;
+  font-size: 1.3rem;
+  color: var(--c4);
+}
+
+.hero-decorativo img {
+  width: 80px;
+  height: 190px;
+}

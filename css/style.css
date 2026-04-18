@@ -1,0 +1,64 @@
+/* ----- IMPORTS ----- */
+@import "./header.css";
+@import "./hero.css";
+@import "./sobre.css";
+@import "./projetos.css";
+@import "./formacao.css";
+@import "./footer.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
+
+/* ----- VARIÁVEIS ----- */
+:root {
+  --c1: #f5f5f5;
+  --c2: #ebebeb;
+  --c3: #e0e0e0;
+  --c4: #cccccc;
+  --c5: #b8b8b8;
+  --c6: #a3a3a3;
+  --c7: #8f8f8f;
+  --c8: #7a7a7a;
+  --c9: #666666;
+  --c10: #525252;
+  --c11: #3d3d3d;
+  --c12: #292929;
+  --c13: #141414;
+  --c14: #0e0e0e;
+  --c15: #000000;
+  --gradient: linear-gradient(90deg, #0e5ee4 0%, #0400c7 100%);
+  --font-titulo: "Montserrat", Arial, sans-serif;
+  --font-texto: "Roboto", Arial, sans-serif;
+}
+
+/* ----- RESET ----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----- BASE ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c13);
+  color: var(--c1);
+  font-family: var(--font-texto);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
