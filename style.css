@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--c13);
   color: var(--c1);
   font-family: var(--font-texto);
 }
@@ -57,7 +57,7 @@ img {
   max-width: 100%;
 }
 
-/* ----- HEADER ----- */
+/* ----------------- HEADER ----------------- */
 header {
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ nav ul li a:hover {
   color: #0e5ee4;
 }
 
-/* ----- HERO ----- */
+/* ----------------- HERO ----------------- */
 #hero {
   display: flex;
   align-items: center;
@@ -117,7 +117,7 @@ nav ul li a:hover {
   height: 190px;
 }
 
-/* ----- SOBRE MIM ----- */
+/* ---------------- SOBRE MIM ------------------ */
 #sobre {
   padding: 40px 180px 80px;
 }
@@ -129,18 +129,21 @@ nav ul li a:hover {
   border-radius: 8px;
   border: 2px solid var(--c14);
   overflow: hidden;
+
+  min-height: 500px; /* 🔥 ESSENCIAL pro alinhamento */
 }
 
+/* ---------- IMAGEM ---------- */
 .sobre-imagem {
-  flex: 0 0 35%;
-  position: relative;
-  padding: 24px 0 24px 24px;
+  flex: 1;
+  padding: 30px;
   display: flex;
 }
 
 .sobre-imagem figure {
   width: 100%;
   height: 100%;
+  position: relative; /* 🔥 necessário pro figcaption */
 }
 
 .sobre-imagem img {
@@ -148,42 +151,45 @@ nav ul li a:hover {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  display: block;
-  max-width: unset;
+  border-radius: 8px;
+}
+
+/* figcaption FIXO dentro da imagem */
+.sobre-imagem figcaption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.75rem;
+  color: var(--c6);
+  background-color: var(--c13);
+  padding: 10px 20px;
   border-radius: 6px;
 }
 
-.sobre-imagem figcaption {
-  position: absolute;
-  bottom: 42px;
-  left: 48px;
-  font-size: 0.75rem;
-  color: var(--c4);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 6px 12px;
-  border-radius: 4px;
-}
-
+/* ---------- CONTEÚDO ---------- */
 .sobre-conteudo {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 40px 40px 40px 32px;
-  justify-content: center;
+  padding: 40px;
   position: relative;
+
+  justify-content: space-between;
 }
 
+/* bloco de texto (topo) */
 .sobre-conteudo h2 {
   font-family: var(--font-titulo);
   font-weight: 700;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
+  margin-bottom: 36px;
 }
 
 .sobre-conteudo p {
   font-size: 1.6rem;
   color: var(--c5);
   line-height: 1.4;
+  margin-bottom: 24px;
 }
 
 .sobre-conteudo strong {
@@ -191,21 +197,24 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
+/* linha decorativa */
 .sobre-conteudo::after {
   content: "";
   position: absolute;
   bottom: 24px;
   right: 40px;
-  width: 400px;
+  width: 260px;
   height: 6px;
   background: var(--gradient);
   border-radius: 10px;
 }
 
+/* ---------- REDES SOCIAIS ---------- */
 .redes-sociais {
   display: flex;
   gap: 12px;
   align-items: center;
+  margin-top: auto; /* 🔥 garante que fica no final */
 }
 
 .redes-sociais li a {
@@ -227,4 +236,122 @@ nav ul li a:hover {
 .redes-sociais li a img {
   width: 36px;
   height: 36px;
+}
+
+/* ---------------- RESPONSIVO ---------------- */
+
+@media (max-width: 1500px) {
+  #sobre {
+    padding: 40px 80px 80px;
+  }
+
+  .sobre-card {
+    min-height: 460px;
+  }
+
+  .sobre-imagem {
+    flex: 0.85;
+    padding: 24px;
+  }
+
+  .sobre-imagem img {
+    object-position: center 15%;
+  }
+
+  .sobre-conteudo {
+    flex: 1.15;
+    padding: 36px 36px 48px;
+  }
+
+  .sobre-conteudo h2 {
+    font-size: 2.8rem;
+    margin-bottom: 24px;
+  }
+
+  .sobre-conteudo p {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  .sobre-conteudo::after {
+    width: 200px;
+    right: 36px;
+    bottom: 20px;
+  }
+
+  .redes-sociais li a {
+    width: 62px;
+    height: 62px;
+  }
+
+  .redes-sociais li a img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  #sobre {
+    padding: 40px 24px;
+  }
+
+  .sobre-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .sobre-imagem {
+    padding: 20px 20px 0 20px;
+    max-height: 320px;
+    overflow: hidden;
+  }
+
+  .sobre-imagem figure {
+    height: 320px;
+  }
+
+  .sobre-imagem img {
+    object-position: center center;
+  }
+
+  .sobre-imagem figcaption {
+    bottom: 32px;
+    left: 12px;
+    padding: 12px 24px;
+  }
+
+  .sobre-conteudo {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .sobre-conteudo h2 {
+    font-size: 2rem;
+    margin-bottom: auto;
+  }
+
+  .sobre-conteudo p {
+    font-size: 1.2rem;
+    margin-bottom: auto;
+  }
+
+  .redes-sociais {
+    margin-top: 0;
+  }
+
+  .sobre-conteudo::after {
+    width: 120px;
+    height: 4px;
+  }
+
+  .redes-sociais li a {
+    width: 56px;
+    height: 56px;
+  }
+
+  .redes-sociais li a img {
+    width: 28px;
+    height: 28px;
+  }
 }
