@@ -1,1 +1,230 @@
-/* salavr as cores que serao utilizadas */
+/* ----- IMPORTS ----- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
+
+/* ----- VARIÁVEIS ----- */
+:root {
+  --c1: #f5f5f5;
+  --c2: #ebebeb;
+  --c3: #e0e0e0;
+  --c4: #cccccc;
+  --c5: #b8b8b8;
+  --c6: #a3a3a3;
+  --c7: #8f8f8f;
+  --c8: #7a7a7a;
+  --c9: #666666;
+  --c10: #525252;
+  --c11: #3d3d3d;
+  --c12: #292929;
+  --c13: #141414;
+  --c14: #000000;
+  --bg: #0e0e0e;
+  --gradient: linear-gradient(90deg, #0e5ee4 0%, #0400c7 100%);
+  --font-titulo: "Montserrat", sans-serif;
+  --font-texto: "Roboto", sans-serif;
+}
+
+/* ----- RESET ----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----- BASE ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--c1);
+  font-family: var(--font-texto);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ----- HEADER ----- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 180px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg);
+}
+
+.logo {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #0e5ee4;
+}
+
+/* ----- HERO ----- */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 180px;
+  min-height: 300px;
+}
+
+.hero-texto h1 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.15;
+}
+
+.hero-texto p {
+  margin-top: 0.75rem;
+  font-size: 1.3rem;
+  color: var(--c4);
+}
+
+.hero-decorativo img {
+  width: 80px;
+  height: 190px;
+}
+
+/* ----- SOBRE MIM ----- */
+#sobre {
+  padding: 40px 180px 80px;
+}
+
+.sobre-card {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--bg);
+  border-radius: 8px;
+  border: 2px solid var(--c14);
+  overflow: hidden;
+}
+
+.sobre-imagem {
+  flex: 0 0 35%;
+  position: relative;
+  padding: 24px 0 24px 24px;
+  display: flex;
+}
+
+.sobre-imagem figure {
+  width: 100%;
+  height: 100%;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  max-width: unset;
+  border-radius: 6px;
+}
+
+.sobre-imagem figcaption {
+  position: absolute;
+  bottom: 42px;
+  left: 48px;
+  font-size: 0.75rem;
+  color: var(--c4);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.sobre-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 40px 40px 32px;
+  justify-content: center;
+  position: relative;
+}
+
+.sobre-conteudo h2 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+.sobre-conteudo p {
+  font-size: 1.6rem;
+  color: var(--c5);
+  line-height: 1.4;
+}
+
+.sobre-conteudo strong {
+  color: var(--c1);
+  font-weight: 700;
+}
+
+.sobre-conteudo::after {
+  content: "";
+  position: absolute;
+  bottom: 24px;
+  right: 40px;
+  width: 400px;
+  height: 6px;
+  background: var(--gradient);
+  border-radius: 10px;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.redes-sociais li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background-color: var(--c14);
+  border-radius: 6px;
+  border: 0.5px solid #3b69b9;
+  transition: background-color 0.2s;
+}
+
+.redes-sociais li a:hover {
+  background-color: var(--c12);
+}
+
+.redes-sociais li a img {
+  width: 36px;
+  height: 36px;
+}
