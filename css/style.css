@@ -24,7 +24,7 @@
   --c13: #141414;
   --c14: #0e0e0e;
   --c15: #000000;
-  --gradient: linear-gradient(90deg, #0e5ee4 0%, #0400c7 100%);
+  --gradient: linear-gradient(180deg, #0e5ee4 0%, #0400c7 100%);
   --font-titulo: "Montserrat", Arial, sans-serif;
   --font-texto: "Roboto", Arial, sans-serif;
 }
@@ -33,8 +33,8 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
