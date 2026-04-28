@@ -1,0 +1,232 @@
+.formacao {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 100px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+.secao-titulo-bg2 {
+  font-family: var(--font-titulo);
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--c12);
+  max-width: 5ch; /* quebra em 4 caracteres: FORM / AÇÃO */
+  word-break: break-all;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  align-self: start;
+}
+
+.formacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ── Cards acadêmicos ── */
+.formacoes-academicas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formacao-card {
+  display: flex;
+  align-items: stretch;
+  background: #1c1c1c;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-barra2 {
+  width: 5px;
+  height: 60%;
+  background: var(--gradient);
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.card-conteudo2 {
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 4px;
+  width: 100%;
+}
+
+.formacao-tipo {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--c8);
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.formacao-periodo {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  color: var(--c8);
+  text-align: right;
+  align-self: center;
+}
+
+.card-conteudo2 h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c1);
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+}
+
+.card-conteudo2 p {
+  font-size: 1rem;
+  color: var(--c8);
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  font-family: var(--font-titulo);
+}
+
+/* ── Bloco extras (cursos + idiomas) ── */
+.formacao-extras {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.titulo-bloco {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+
+.titulo-bloco img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-left: -38px;
+}
+
+.titulo-bloco h3 {
+  font-family: var(--font-titulo);
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c15); /* azul do gradiente */
+}
+
+/* ── Listas de cursos e idiomas ── */
+.cursos ul,
+.idiomas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cursos ul li,
+.idiomas ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 5px 0;
+}
+
+.curso-nome,
+.idioma-nome {
+  font-family: var(--font-texto);
+  font-size: 1rem;
+  color: var(--c6);
+}
+
+.curso-carga {
+  font-family: var(--font-texto);
+  font-size: 1rem;
+  color: var(--c7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.curso-carga:hover {
+  color: #0a07e9;
+  text-decoration: underline;
+}
+
+.idioma-nivel {
+  font-family: var(--font-texto);
+  font-size: 1rem;
+  color: var(--c10);
+}
+
+/* ── RESPONSIVO ── */
+
+@media (max-width: 700px) {
+  /* Grid vira coluna única */
+  .secao-titulo-bg2 {
+    font-size: 13vw; /* escala com a tela, nunca vai vazar */
+    max-width: 100%;
+    word-break: normal;
+    text-align: center;
+    width: 100%;
+    /* NENHUM overflow: hidden aqui */
+  }
+
+  .formacao {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px 40px;
+    overflow: hidden; /* ← impede scroll horizontal na section */
+  }
+
+  /* Ícone volta para o fluxo normal — sem deslocamento negativo */
+  .titulo-bloco img {
+    margin-left: 0;
+  }
+
+  /* Cards: tipo e período empilham em vez de ficarem lado a lado */
+  .card-conteudo2 {
+    grid-template-columns: 1fr;
+  }
+
+  .formacao-periodo {
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  .formacao-tipo {
+    font-size: 0.85rem;
+  }
+
+  .formacao-conteudo {
+    gap: 40px;
+  }
+}
+
+/* ── Tablet intermediário ── */
+@media (min-width: 701px) and (max-width: 960px) {
+  .formacao {
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 40px 24px;
+  }
+
+  /* Ícone recua menos — há menos espaço disponível */
+  .titulo-bloco img {
+    margin-left: -28px;
+  }
+}
